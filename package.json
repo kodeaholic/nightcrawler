@@ -5,7 +5,6 @@
         "node": "14.17.3"
       },
       "scripts": {
-      "postinstall": "concurrently --kill-others-on-fail \"yarn server-build\" \"yarn client-build\"",
       "heroku-postbuild": "concurrently --kill-others-on-fail \"yarn server-build\" \"yarn client-build\"",
       "client-build": "cd client && yarn cache clean --all && yarn install --network-concurrency 1 && yarn build",
       "server-build": "cd server && yarn cache clean --all && yarn install --network-concurrency 1",
