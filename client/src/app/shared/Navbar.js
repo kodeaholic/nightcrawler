@@ -180,8 +180,8 @@ class Navbar extends Component {
             <Dropdown alignRight as="li" className="nav-item">
               <Dropdown.Toggle as="a" className="nav-link cursor-pointer no-caret">
                 <div className="navbar-profile">
-                  <img className="img-xs rounded-circle" src={require('../../assets/images/faces/face15.jpg')} alt="profile" />
-                  <p className="mb-0 d-none d-sm-block navbar-profile-name"><Trans>Henry Klein</Trans></p>
+                  <img className="img-xs rounded-circle" src={require('../../assets/images/faces/myface.jpg')} alt="profile" />
+                  <p className="mb-0 d-none d-sm-block navbar-profile-name"><Trans>Nathan</Trans></p>
                   <i className="mdi mdi-menu-down d-none d-sm-block"></i>
                 </div>
               </Dropdown.Toggle>

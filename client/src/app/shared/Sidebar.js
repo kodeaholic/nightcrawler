@@ -63,12 +63,12 @@ class Sidebar extends Component {
             <div className="profile-desc">
               <div className="profile-pic">
                 <div className="count-indicator">
-                  <img className="img-xs rounded-circle " src={require('../../assets/images/faces/face15.jpg')} alt="profile" />
+                  <img className="img-xs rounded-circle " src={require('../../assets/images/faces/myface.jpg')} alt="profile" />
                   <span className="count bg-success"></span>
                 </div>
                 <div className="profile-name">
-                  <h5 className="mb-0 font-weight-normal"><Trans>Henry Klein</Trans></h5>
-                  <span><Trans>Gold Member</Trans></span>
+                  <h5 className="mb-0 font-weight-normal"><Trans>Nathan</Trans></h5>
+                  <span><Trans>Webmaster</Trans></span>
                 </div>
               </div>
               <Dropdown alignRight>
