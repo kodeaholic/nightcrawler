@@ -56,7 +56,7 @@ export class Dashboard extends Component {
   render () {
     return (
       <div>
-        <div className="proBanner">
+        <div className="proBanner hide">
           <div>
             <span className="d-flex align-items-center purchase-popup">
               <p>Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more!</p>

@@ -61,7 +61,7 @@ if (config.env === 'production') {
 app.use('/v1', routes);
 
 app.use(express.static(path.join(__dirname, '../../client/build')));
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
   console.log('Yeah!')
   res.sendFile(path.join(__dirname, '../../client/build', 'index.html'));
 });
