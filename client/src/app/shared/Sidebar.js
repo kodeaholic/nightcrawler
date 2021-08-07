@@ -41,6 +41,7 @@ class Sidebar extends Component {
       {path:'/charts', state: 'chartsMenuOpen'},
       {path:'/user-pages', state: 'userPagesMenuOpen'},
       {path:'/error-pages', state: 'errorPagesMenuOpen'},
+      {path:'/co-phim', state: 'cophimMenuOpen'},
     ];
 
     dropdownPaths.forEach((obj => {
@@ -120,6 +121,22 @@ class Sidebar extends Component {
               <span className="menu-icon"><i className="mdi mdi-speedometer"></i></span>
               <span className="menu-title"><Trans>Dashboard</Trans></span>
             </Link>
+          </li>
+          <li className={ this.isPathActive('/co-phim') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
+            <div className={ this.state.tablesMenuOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('cophimMenuOpen') } data-toggle="collapse">
+              <span className="menu-icon">
+                <i className="mdi mdi-movie"></i>
+              </span>
+              <span className="menu-title"><Trans>COPHIM</Trans></span>
+              <i className="menu-arrow"></i>
+            </div>
+            <Collapse in={ this.state.cophimMenuOpen }>
+              <div>
+                <ul className="nav flex-column sub-menu">
+                  <li className="nav-item"> <Link className={ this.isPathActive('/co-phim/link-le') ? 'nav-link active' : 'nav-link' } to="/co-phim/link-le"><Trans>Link phim lẻ</Trans></Link></li>
+                </ul>
+              </div>
+            </Collapse>
           </li>
           <li className={ this.isPathActive('/basic-ui') ? 'nav-item menu-items active' : 'nav-item menu-items' }>
             <div className={ this.state.basicUiMenuOpen ? 'nav-link menu-expanded' : 'nav-link' } onClick={ () => this.toggleMenuState('basicUiMenuOpen') } data-toggle="collapse">

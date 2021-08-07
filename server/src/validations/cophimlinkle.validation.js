@@ -5,6 +5,7 @@ const createItem = {
   body: Joi.object().keys({
     link: Joi.string().required(),
     status: Joi.number().required(),
+    thumb: Joi.string(),
   }),
 };
 
@@ -32,6 +33,7 @@ const updateItem = {
     .keys({
       link: Joi.string(),
       status: Joi.number(),
+      thumb: Joi.string(),
     })
     .min(1),
 };

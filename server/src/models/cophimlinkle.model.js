@@ -15,6 +15,11 @@ const cophimlinkle = mongoose.Schema(
       trim: false,
       default: 0,
     },
+    thumb: {
+      type: String,
+      required: false,
+      trim: false,
+    }
   },
   {
     timestamps: true,

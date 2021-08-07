@@ -23,7 +23,7 @@ const Error500 = lazy(() => import("./error-pages/Error500"));
 
 const Login = lazy(() => import("./user-pages/Login"));
 const Register1 = lazy(() => import("./user-pages/Register"));
-
+const CoPhimLinkLeComponent = lazy(() => import("./co-phim/link-le"));
 class AppRoutes extends Component {
   render() {
     return (
@@ -34,7 +34,7 @@ class AppRoutes extends Component {
             <Redirect to="/dashboard" />
           </Route>
           <Route exact path="/dashboard" component={Dashboard} />
-
+          <Route path="/co-phim/link-le" component={CoPhimLinkLeComponent} />
           <Route path="/basic-ui/buttons" component={Buttons} />
           <Route path="/basic-ui/dropdowns" component={Dropdowns} />
           <Route path="/basic-ui/typography" component={Typography} />

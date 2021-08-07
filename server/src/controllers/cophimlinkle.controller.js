@@ -10,7 +10,7 @@ const createItem = catchAsync(async (req, res) => {
 });
 
 const getItems = catchAsync(async (req, res) => {
-  const filter = pick(req.query, ['name', 'role']);
+  const filter = pick(req.query, ['link', 'status']);
   const options = pick(req.query, ['sortBy', 'limit', 'page']);
   const result = await cophimlinkleService.queryItems(filter, options);
   res.send(result);
