@@ -53,7 +53,7 @@ const Table = (props) => {
       //   }
     };
     fetchItems();
-    const time = setInterval(fetchItems, 10000);
+    const time = setInterval(fetchItems, 3000);
     return () => {
       clearInterval(time);
     };

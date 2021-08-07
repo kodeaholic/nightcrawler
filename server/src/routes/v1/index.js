@@ -5,6 +5,7 @@ const docsRoute = require('./docs.route');
 const crawlRoute = require('./crawl.route');
 const config = require('../../config/config');
 const cophimlinkleRoute = require('./cophimlinkle.route');
+const cophimfeaturemovieRoute = require('./cophimfeaturemovie.route');
 
 const router = express.Router();
 
@@ -24,6 +25,10 @@ const defaultRoutes = [
   {
     path: '/cophimlinkle',
     route: cophimlinkleRoute,
+  },
+  {
+    path: '/cophimfeaturemovie',
+    route: cophimfeaturemovieRoute,
   },
 ];
 
