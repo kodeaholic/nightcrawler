@@ -4,6 +4,7 @@ const userRoute = require('./user.route');
 const docsRoute = require('./docs.route');
 const crawlRoute = require('./crawl.route');
 const config = require('../../config/config');
+const cophimlinkleRoute = require('./cophimlinkle.route');
 
 const router = express.Router();
 
@@ -19,6 +20,10 @@ const defaultRoutes = [
   {
     path: '/crawl',
     route: crawlRoute,
+  },
+  {
+    path: '/cophimlinkle',
+    route: cophimlinkleRoute,
   },
 ];
 
