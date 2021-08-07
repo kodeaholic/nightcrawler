@@ -134,6 +134,7 @@ class Sidebar extends Component {
               <div>
                 <ul className="nav flex-column sub-menu">
                   <li className="nav-item"> <Link className={ this.isPathActive('/co-phim/link-le') ? 'nav-link active' : 'nav-link' } to="/co-phim/link-le"><Trans>Link phim lẻ</Trans></Link></li>
+                  <li className="nav-item"> <Link className={ this.isPathActive('/co-phim/feature-movie') ? 'nav-link active' : 'nav-link' } to="/co-phim/feature-movie"><Trans>Phim lẻ</Trans></Link></li>
                 </ul>
               </div>
             </Collapse>
