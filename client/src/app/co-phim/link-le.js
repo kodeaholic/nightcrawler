@@ -21,6 +21,12 @@ const Table = (props) => {
       : type === TYPE.failed
       ? STATUS.failed
       : STATUS.todo;
+  const classBadge =
+    type === TYPE.failed
+      ? "badge-danger"
+      : type === TYPE.done
+      ? "badge-success"
+      : "badge-info";
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);
   const [results, setResults] = useState([]);
@@ -33,20 +39,24 @@ const Table = (props) => {
       setResults(res.results || []);
       setTotalPage(res.totalPages || 0);
       setTotalResults(res.totalResults || 0);
-    //   if (res.totalPages > 0 && res.totalPages <= 5) {
-    //     let active = res.page;
-    //     let items = [];
-    //     for (let number = 1; number <= res.totalPages; number++) {
-    //       items.push(
-    //         <Pagination.Item key={number} active={number === active}>
-    //           {number}
-    //         </Pagination.Item>
-    //       );
-    //     }
-    //     setPagination(items);
-    //   }
+      //   if (res.totalPages > 0 && res.totalPages <= 5) {
+      //     let active = res.page;
+      //     let items = [];
+      //     for (let number = 1; number <= res.totalPages; number++) {
+      //       items.push(
+      //         <Pagination.Item key={number} active={number === active}>
+      //           {number}
+      //         </Pagination.Item>
+      //       );
+      //     }
+      //     setPagination(items);
+      //   }
     };
     fetchItems();
+    const time = setInterval(fetchItems, 10000);
+    return () => {
+      clearInterval(time);
+    };
   }, [page, limit]);
 
   return (
@@ -84,7 +94,7 @@ const Table = (props) => {
                         <img src={item.thumb} alt="Thumb" />
                       </td>
                       <td>
-                        <label className="badge badge-info">{type}</label>
+                        <label className={`badge ${classBadge}`}>{type}</label>
                       </td>
                     </tr>
                   );
