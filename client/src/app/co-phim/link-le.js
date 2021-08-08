@@ -75,6 +75,7 @@ const Table = (props) => {
               <thead>
                 <tr>
                   <th>No.</th>
+                  {type === TYPE.failed && (<th>ID</th>)}
                   <th>Link</th>
                   <th>Thumb</th>
                   <th>Status</th>
@@ -85,6 +86,7 @@ const Table = (props) => {
                   return (
                     <tr>
                       <td>{index + 1}</td>
+                      {type === TYPE.failed && (<td>{item.id}</td>)}
                       <td>
                         <a href={item.link} target="_blank">
                           {item.link}

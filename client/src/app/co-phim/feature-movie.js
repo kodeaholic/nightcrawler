@@ -95,7 +95,7 @@ export class CoPhimLinkLeComponent extends Component {
                 </a>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                Link phim lẻ
+                Phim lẻ
               </li>
             </ol>
           </nav>

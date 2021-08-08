@@ -85,6 +85,12 @@ const cophimfeaturemovie = mongoose.Schema(
     posterImg: {
       type: String,
       required: false,
+      default: 'https://2.bp.blogspot.com/-Zc0xnr6YUXI/YQ-fB-q-8AI/AAAAAAAAEUc/athnl-bAYZwypsQNW9bWIfWffxjjHOxZwCLcBGAsYHQ/s0/defaultposter.jpg',
+    },
+    posterReup: {
+      type: Number,
+      required: false,
+      default: 0,
     },
     published: {
       type: Number,

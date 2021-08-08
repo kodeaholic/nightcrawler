@@ -119,6 +119,7 @@ const getMovieDetails = async (thumbnailLink) => {
           const find = await CoPhimFeatureMovie.find({ thumbnailLink: thumbnailLink.id });
           console.log(find);
           if (!_.isEmpty(find)) {
+            console.log(find);
             const link = await CoPhimLinkLe.findById(thumbnailLink.id);
             Object.assign(link, { status: 1 });
             await link.save();
@@ -135,6 +136,7 @@ const getMovieDetails = async (thumbnailLink) => {
               postUrl: thumbnailLink.link,
               posterImg,
             });
+            console.log(mv);
             const link = await CoPhimLinkLe.findById(thumbnailLink.id);
             Object.assign(link, { status: 1 });
             await link.save();
@@ -153,9 +155,9 @@ const getMovieDetails = async (thumbnailLink) => {
   console.log(`Fetch failed. Check ${origin}`);
   return {};
 };
-const crawl20FeatureMovies = async () => {
+const crawl20FeatureMovies = async (status = 0, sort = { _id: 1 }) => {
   // Get first 20 feature movie links to crawl
-  const first20Items = await CoPhimLinkLe.find({ status: { $in: [0] } }).limit(20);
+  const first20Items = await CoPhimLinkLe.find({ status: { $in: [status] } }, null, { sort: sort }, () => {}).limit(20);
   for (let i = 0; i < 20; i++) {
     await getMovieDetails(first20Items[i]);
   }

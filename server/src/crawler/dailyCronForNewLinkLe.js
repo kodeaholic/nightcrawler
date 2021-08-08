@@ -189,7 +189,7 @@ function chunkArray(myArray, chunkSize) {
 }
 
 const crawl = async () => {
-  const array = Array(185)
+  const array = Array(10)
     .fill()
     .map((x, index) => index + 1);
   let movies = [];
