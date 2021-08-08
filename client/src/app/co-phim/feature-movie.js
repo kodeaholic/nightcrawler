@@ -48,7 +48,7 @@ const Table = (props) => {
                 <tr>
                   <th>No.</th>
                   <th>Link</th>
-                  <th>Thumb</th>
+                  <th>Poster</th>
                   <th>Status</th>
                 </tr>
               </thead>
