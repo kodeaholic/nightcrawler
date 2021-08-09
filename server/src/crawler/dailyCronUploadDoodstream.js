@@ -35,7 +35,10 @@ const uploadFilePromise = (movie) => {
         /playhydrax.com/.test(movie.link) ||
         /ostreamcdn.com/.test(movie.link) ||
         /xemhdphim.com/.test(movie.link) ||
-        /hdviet.com/.test(movie.link)
+        /hdviet.com/.test(movie.link) ||
+        /phimmoi.net/.test(movie.link) ||
+        /photos.google.com/.test(movie.link) ||
+        /oloadcdn.net/.test(movie.link)
       ) {
         // ignored
         const updatedMovie = await CoPhimFeatureMovie.findById(movie.id);
@@ -72,6 +75,14 @@ const uploadFilePromise = (movie) => {
           console.log(updatedMovie);
           resolve(movie.id);
         } else {
+          console.log('Failed to upload to doodstream. Ignoring ...');
+          const updatedMovie = await CoPhimFeatureMovie.findById(movie.id);
+          const videoLinks = updatedMovie.videoLinks;
+          const index = _.findIndex(videoLinks, function (item) {
+            return item.id === movie.linkId;
+          });
+          updatedMovie.videoLinks[index].queued = 1;
+          await updatedMovie.save();
           resolve(movie.id);
         }
       }
@@ -100,13 +111,13 @@ const main = async () => {
     console.log('DB connected ...');
   }
 
-  console.log('Getting 25 movies ...');
-  const first25Items = await CoPhimFeatureMovie.find({
+  console.log('Getting 30 movies ...');
+  const first30Items = await CoPhimFeatureMovie.find({
     $and: [{ 'videoLinks.queued': { $ne: 1 } }],
-  }).limit(25);
+  }).limit(30);
   let promises = [];
   let movies = [];
-  first25Items.map((item) => {
+  first30Items.map((item) => {
     if (item.videoLinks && item.videoLinks.length) {
       const links = item.videoLinks;
       links.map((link) => {
@@ -123,6 +134,8 @@ const main = async () => {
       });
     }
   });
+  // console.log(movies);
+  // process.exit(0);
   promises = movies.map((item) => uploadFilePromise(item));
   Promise.all(promises)
     .then((results) => {
@@ -136,6 +149,8 @@ const main = async () => {
     });
   return;
 };
+
+// main();
 
 const job = new CronJob(
   '0 */1 * * * *',
