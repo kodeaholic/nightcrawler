@@ -34,7 +34,7 @@ const uploadFilePromise = (fileUrl, movieId = undefined) => {
             console.log('Start uploading to get upload token ...');
             // Start upload to get uploadToken
             const accessToken =
-              'ya29.a0ARrdaM_OuFkYBttSOkaQkvZlzEDwqOaMnQMV6vfHXOYXuo4APJixlTMma1XRA6OZs1j57arX7mvIf6888quTuXvYO5hBUrhYh7Ts7lRghbXOiRXrIJM0GnHPoZ1H_PQ5v8MZ4n8fepQLEXeHmgq7g9ESd0A0';
+              'ya29.a0ARrdaM-izEtT6e3n3dCQynYD0d1xe6EiWfYwXpstC4kJEijmjr8wofIIhIO2dEVvUzlQWNiWPf_MipojIlddld8RPNor-SjI8KM8wRVsxGY1g7nVkJPACgm6WhzzkKz-L1IUMRpPOozLnQpHeueKhS7s0pdC';
             let API_END_POINT = 'https://photoslibrary.googleapis.com/v1/uploads';
             let headers = {
               Authorization: `Bearer ${accessToken}`,

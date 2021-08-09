@@ -2,7 +2,7 @@ const express = require('express');
 const authRoute = require('./auth.route');
 const userRoute = require('./user.route');
 const docsRoute = require('./docs.route');
-const crawlRoute = require('./crawl.route');
+// const crawlRoute = require('./crawl.route');
 const config = require('../../config/config');
 const cophimlinkleRoute = require('./cophimlinkle.route');
 const cophimfeaturemovieRoute = require('./cophimfeaturemovie.route');
@@ -18,10 +18,10 @@ const defaultRoutes = [
     path: '/users',
     route: userRoute,
   },
-  {
-    path: '/crawl',
-    route: crawlRoute,
-  },
+  // {
+  //   path: '/crawl',
+  //   route: crawlRoute,
+  // },
   {
     path: '/cophimlinkle',
     route: cophimlinkleRoute,
